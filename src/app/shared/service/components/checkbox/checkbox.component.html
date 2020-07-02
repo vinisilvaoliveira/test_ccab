@@ -1,0 +1,5 @@
+<label class="Checkbox" [attr.for]="id">
+    <span class="Checkbox__checkmark" [ngClass]="{'Checkbox__checkmark--checked': isSelected}"></span>
+    <p>{{label}}</p>
+    <input type="checkbox" (ngModelChange)="onChange.emit($event)" [name]="isSelected" [value]="value" [id]="id">
+</label>

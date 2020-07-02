@@ -1,0 +1,94 @@
+<app-nav-menu></app-nav-menu>
+<div class="search">
+  <label class="search__filter">Filtro: </label>
+  <input class="search__input" (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+</div>
+
+<div class="search">
+  <label class="Checkbox">
+    <span class="Checkbox__checkmark" [ngClass]="{'Checkbox__checkmark--checked': formCheck}"></span>
+    <p>Mais informaçãoes</p>
+    <input type="checkbox" [(ngModel)]="formCheck" name="formCheck" value="value">
+  </label>
+
+</div>
+
+
+<div class="table mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.id}}
+        </button>
+      </mat-cell>
+
+    </ng-container>
+
+
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+
+      <mat-cell *matCellDef="let row">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.name}}
+        </button>
+      </mat-cell>
+
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{'cssClass': !formCheck}"> Nome do Usuário
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row" [ngClass]="{'cssClass': !formCheck}">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.username}}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{'cssClass': !formCheck}"> E-mal </mat-header-cell>
+      <mat-cell *matCellDef="let row" [ngClass]="{'cssClass': !formCheck}">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.email}}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{'cssClass': !formCheck}"> Telefone
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row" [ngClass]="{'cssClass': !formCheck}">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.phone}}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="{'cssClass': !formCheck}"> Cidade </mat-header-cell>
+      <mat-cell *matCellDef="let row" [ngClass]="{'cssClass': !formCheck}">
+        <button type="button" class="btn" (click)="checkMain(row)">
+          {{row.address.city}}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator> -->
+</div>
+
+<app-footer></app-footer>

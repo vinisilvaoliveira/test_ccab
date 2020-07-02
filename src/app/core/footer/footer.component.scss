@@ -1,0 +1,23 @@
+nav {
+    margin: 120px 0 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(24, 23, 22, 0.3);
+    padding: 3px;
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__logo {
+            width: 70%;
+            li {
+                text-align: center;
+                a {
+                    img {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}

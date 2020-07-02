@@ -1,0 +1,99 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="companyDetails">
+    <div class="container">
+        <h1>Dados completos:</h1>
+        <div class="row companyDetails__line">
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Id</label>
+                <p>{{ dataInformation.id ? dataInformation.id : '-' }}</p>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Nome</label>
+                <p>{{ dataInformation.name ?  dataInformation.name : '-' }}</p>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">E-mail</label>
+                <p>{{ dataInformation.email ? dataInformation.email : '-' }}</p>
+            </div>
+
+            <!-- secund line -->
+
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Telefone</label>
+                <p>{{ dataInformation.phone ? dataInformation.phone : '-' }}</p>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Nome de Usuário</label>
+                <p>{{ dataInformation.username ? dataInformation.username : '-' }}</p>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Web Site</label>
+                <p>{{ dataInformation.website ? dataInformation.website : '-' }}</p>
+            </div>
+
+            <!-- third line -->
+
+            <div class="title col-md-12">
+                <h1>Endereço</h1>
+            </div>
+            <div class="col-md-3 companyDetails__line--size">
+                <label for="">Cep</label>
+                <p>{{ dataInformation.address.zipcode ? dataInformation.address.zipcode : '-' }}</p>
+            </div>
+
+            <div class="col-md-3 companyDetails__line--size">
+                <label for="">Rua</label>
+                <p>{{ dataInformation.address.street? dataInformation.address.street : '-' }}</p>
+            </div>
+
+            <div class="col-md-3 companyDetails__line--size">
+                <label for="">Complemento</label>
+                <p>{{ dataInformation.address.suite ?  dataInformation.address.suite  : '-' }}</p>
+            </div>
+
+            <div class="col-md-3 companyDetails__line--size">
+                <label for="">Cidade</label>
+                <p>{{ dataInformation.address.city ? dataInformation.address.city : '-' }}</p>
+            </div>
+
+            <div class="title col-md-12">
+                <h1>Área geográfica</h1>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Latitude</label>
+                <p>{{ dataInformation.address.geo.lat ? dataInformation.address.geo.lat : '-' }}</p>
+            </div>
+
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Longitude</label>
+                <p>{{ dataInformation.address.geo.lng ? dataInformation.address.geo.lng : '-' }}</p>
+            </div>
+
+            <div class="title col-md-12">
+                <h1>Empresa</h1>
+            </div>
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Nome da empresa</label>
+                <p>{{ dataInformation.company.bs ? dataInformation.company.bs  : '-'}}</p>
+            </div>
+
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Nome Fantasia</label>
+                <p>{{ dataInformation.company.catchPhrase ? dataInformation.company.catchPhrase : '-' }}</p>
+            </div>
+
+            <div class="col-md-4 companyDetails__line--size">
+                <label for="">Frase</label>
+                <p>{{ dataInformation.company.catchPhrase ? dataInformation.company.catchPhrase   : '-'}}</p>
+            </div>
+
+        </div>
+
+        <div class="companyDetails__btnBack">
+            <button class="btn col-12" (click)="back()">Voltar</button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

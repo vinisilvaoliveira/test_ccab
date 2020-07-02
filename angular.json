@@ -121,8 +121,16 @@
               "devServerTarget": "ccab-test:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "ccab-test"
+    }
+  },
+  "defaultProject": "ccab-test",
+  "cli": {
+    "analytics": "3de2d4c3-594a-4597-944a-6fdbd8789027"
+  }
 }

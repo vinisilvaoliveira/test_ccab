@@ -1,0 +1,125 @@
+@import "../../sass/variables";
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    mat-form-field {
+        background-color: rgba(214, 214, 214, 0.3);
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    &__filter {
+        font-family: $Poppins;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    &__input {
+        font-family: $OpenSans;
+        font-size: 14px;
+        padding: 10px 14px;
+        border: none;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        transition: 0.1s ease-in;
+        width: 20%;
+        color: #212121;
+        &:hover {
+            box-shadow: 0 9px 6px rgba(0, 0, 0, 0.1);
+        }
+        &:focus {
+            box-shadow: 0 3px 6px rgba(40, 255, 230, 0.3);
+        }
+    }
+}
+
+.cssClass {
+    display: none;
+}
+
+.table {
+    mat-table {
+        mat-row {
+            border: none;
+            padding: 0 2vw;
+            &:nth-child(2n + 2) {
+                background-color: rgba(24, 23, 22, 0.1);
+            }
+            &:hover {
+                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+            }
+        }
+        mat-header-cell {
+            color: $blue;
+            font-weight: bold;
+            padding-left: 25px;
+        }
+        mat-cell {
+            font-size: 12px;
+            padding-left: 0px;
+            .btn {
+                background: transparent;
+                &:focus {
+                    outline: none;
+                }
+                &:active {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+.Checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    font-family: $OpenSans;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    p {
+        margin: 0 0 0 10px;
+    }
+    &__checkmark {
+        position: absolute;
+        top: 49%;
+        transform: translate(0, -50%);
+        left: 0;
+        height: 16px;
+        width: 16px;
+        border: 2px solid $blue;
+        &::after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            left: 3px;
+            top: 0px;
+            width: 6px;
+            height: 10px;
+            border: solid $blue;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            transition: all 0.3s ease-in-out;
+        }
+        &--checked {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
