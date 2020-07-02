@@ -1,5 +1,10 @@
 @import "../../sass/variables";
 
+::ng-deep .mat-sort-header-arrow {
+    opacity: 1 !important;
+    top: -2px;
+}
+
 .search {
     display: flex;
     justify-content: center;
@@ -39,6 +44,12 @@
 }
 
 .table {
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        color: $blue;
+        margin: 20px 0 10px;
+    }
     mat-table {
         mat-row {
             border: none;
@@ -54,6 +65,9 @@
             color: $blue;
             font-weight: bold;
             padding-left: 25px;
+            .mat-sort-header-arrow {
+                opacity: 1 !important;
+            }
         }
         mat-cell {
             font-size: 12px;
@@ -120,6 +134,35 @@
             &::after {
                 opacity: 1;
             }
+        }
+    }
+}
+
+.export {
+    display: flex;
+    justify-content: center;
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        border: 2px solid $blue;
+        border-radius: 4px;
+        font-size: 16px;
+        color: $blue;
+        font-family: Poppins Bold;
+        padding: 9px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.2s;
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 7px;
+            background: $blue;
+            color: #fff;
+        }
+        img {
+            margin-left: 10px;
         }
     }
 }

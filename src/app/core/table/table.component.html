@@ -16,6 +16,8 @@
 
 <div class="table mat-elevation-z8">
 
+  <h1>Dados dos Usuários</h1>
+
   <mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
@@ -89,6 +91,10 @@
   </mat-table>
 
   <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator> -->
+</div>
+<div class="export">
+  <button (click)="exportAsXLSX()" class="export__btn col-12">Exportar tabela <img
+      src="https://i.ibb.co/WK2FC01/excel.png" alt=""></button>
 </div>
 
 <app-footer></app-footer>

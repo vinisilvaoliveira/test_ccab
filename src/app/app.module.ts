@@ -12,6 +12,7 @@ import { NavMenuComponent } from './core/nav-menu/nav-menu.component';
 import { FormsModule } from '@angular/forms';
 import { PersonalInformationComponent } from './core/table/personal-information/personal-information.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { ExcelService } from './shared/excel.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { FooterComponent } from './core/footer/footer.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

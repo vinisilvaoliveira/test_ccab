@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { CommunService } from 'src/app/shared/service/common.service';
+import { ExcelService } from 'src/app/shared/excel.service';
 
 
 /**
@@ -18,7 +19,7 @@ import { CommunService } from 'src/app/shared/service/common.service';
 export class TableComponent implements OnInit {
   displayedColumns = ['id', 'name', 'username', 'email', 'phone', 'city'];
   dataSource: MatTableDataSource<UserData>;
-
+  data: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -27,6 +28,7 @@ export class TableComponent implements OnInit {
   constructor(
     private myCommon: CommunService,
     private route: Router,
+    private excelService: ExcelService
   ) {
 
   }
@@ -51,13 +53,14 @@ export class TableComponent implements OnInit {
 
     this.myCommon.getAllUser()
       .subscribe(async (res: any) => {
+        this.data = res;
         this.dataSource = new MatTableDataSource<UserData>(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         // this.paginator._intl.itemsPerPageLabel = 'Itens por página';
         console.log(this.dataSource);
       }, err => {
-        alert('Invalido');
+        alert('Não foi possivel carregar !');
       });
   }
 
@@ -78,6 +81,10 @@ export class TableComponent implements OnInit {
   checkMain(value: object) {
     localStorage.setItem('dataValues', JSON.stringify(value));
     this.route.navigate(['/dados-usuario'])
+  }
+
+  exportAsXLSX(): void {
+    this.excelService.exportAsExcelFile(this.data, 'tabela');
   }
 }
 
